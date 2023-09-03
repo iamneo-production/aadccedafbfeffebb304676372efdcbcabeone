@@ -33,7 +33,22 @@ function checkwin(){
     for (let pattern of winpatterns){
         const [a,b,c]=pattern;
         if(gameboard[a] && gameboard[a] == gameboard[b] && gameboard[a] == gameboard[c]){
-            
+            return true;
         }
     }
+    return false;
+}
+function checkdraw(){
+    return !gameboard.includes('');
+}
+function enableresetbutton(){
+    resetbutton.disabled=false;
+}
+cells.forEach(cell=> cell.addEventListener('click',handleCellClick));
+resetbutton.addEventListener('click',resetgame);
+function resetgame(){
+    currentplayer='X';
+    gameboard=['','','','','','','','',''];
+    gameactive=true;
+    resultmessage.textcontent=
 }
