@@ -50,5 +50,8 @@ function resetgame(){
     currentplayer='X';
     gameboard=['','','','','','','','',''];
     gameactive=true;
-    resultmessage.textcontent=
+    resultmessage.textcontent='Its Player X turn';
+    cells.forEach(cell =>{cell.textContent='';});
+    resetbutton.disabled=true;
 }
+resetbutton.disabled=true;
