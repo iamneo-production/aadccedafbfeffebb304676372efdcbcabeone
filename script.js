@@ -21,7 +21,19 @@ function handlecellclick(event){
             enableresetbutton();
         }
         else{
-            currentplayer=currentplayer=='X'
+            currentplayer=currentplayer=='X' ? '0' : 'X';
+            resultmessage.textcontent='Its Player ${currentplayer} turn';
+        }
+    }
+}
+function checkwin(){
+    const winpatterns=[[0,1,2],[3,4,5],[6,7,8],
+                       [0,3,6],[1,4,7],[2,5,8],
+                       [0,4,8],[2,4,6]];
+    for (let pattern of winpatterns){
+        const [a,b,c]=pattern;
+        if(gameboard[a] && gameboard[a] == gameboard[b] && gameboard[a] == gameboard[c]){
+            
         }
     }
 }
